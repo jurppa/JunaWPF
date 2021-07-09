@@ -1,0 +1,84 @@
+﻿<Window x:Class="IdänpikajunaUIWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IdänpikajunaUIWPF"
+        mc:Ignorable="d"
+        Title="Koodinimi Idän Pikajuna" Height="450" Width="800">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF81E8FF" Offset="0.788"/>
+            <GradientStop Color="#FF8097D6" Offset="1"/>
+            <GradientStop Color="White" Offset="0.002"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid Opacity="0.77">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="151*"/>
+            <ColumnDefinition Width="249*"/>
+            <ColumnDefinition Width="400*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox Margin="0,148,131,44" TextWrapping="Wrap" Text="" TextAlignment="Center" Name="Output" FontSize="20" Grid.Column="1" Grid.ColumnSpan="2">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <TextBox HorizontalAlignment="Left" GotFocus="TrainServiceNumber_GotFocus" Margin="61,79,0,0" Text="Anna aseman nimi" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="ToStation" Grid.ColumnSpan="2">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <TextBox HorizontalAlignment="Left" GotFocus="TrainServiceNumber_GotFocus" Text="Anna aseman nimi" Margin="61,34,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="FromStation" Grid.ColumnSpan="2">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+
+        <TextBox HorizontalAlignment="Left" Margin="61,120,0,0" Text="Anna päivämäärä" GotFocus="TrainServiceNumber_GotFocus" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="Date" Grid.ColumnSpan="2">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <Button Content="Hae" HorizontalAlignment="Left" Margin="61,144,0,0" VerticalAlignment="Top" Click="FromTo" Background="White"/>
+        <Label Content="Päivämäärä" HorizontalAlignment="Left" Margin="57,96,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Asemalle" HorizontalAlignment="Left" Margin="58,52,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Asemalta" HorizontalAlignment="Left" Margin="59,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox HorizontalAlignment="Left" Margin="127,31,0,0" Text="Anna aseman nimi" TextWrapping="Wrap" GotFocus="TrainServiceNumber_GotFocus" VerticalAlignment="Top" Width="120" Name="GoingThru" Grid.Column="1">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <Label Content="Aseman läpi kulkevat" HorizontalAlignment="Left" Margin="122,10,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Button Content="Hae" HorizontalAlignment="Left" Margin="128,55,0,0" VerticalAlignment="Top" Click="GoingThruTrains" Grid.Column="1" Background="White"/>
+        <TextBox HorizontalAlignment="Left" GotFocus="TrainServiceNumber_GotFocus" Margin="64,29,0,0" Text="Anna junan numero" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="LiveTrain" Grid.Column="2">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <Label Content="Junan live seuranta" HorizontalAlignment="Left" Margin="62,8,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="2"/>
+        <Button Content="Hae" HorizontalAlignment="Left" Margin="64,55,0,0" VerticalAlignment="Top" Click="LiveTrackTrain" Grid.Column="2" Background="White"/>
+        <Label Content="Tietoa junan palveluista" HorizontalAlignment="Left" Margin="222,10,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="2"/>
+        <TextBox HorizontalAlignment="Left" Margin="223,30,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="TrainServiceNumber" Grid.Column="2" Text="Anna junan numero" GotFocus="TrainServiceNumber_GotFocus">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <Button Content="Hae" HorizontalAlignment="Left" Margin="225,104,0,0" VerticalAlignment="Top" Click="InfoAboutWagons" Grid.Column="2">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label Content="Päivämäärä" HorizontalAlignment="Left" Margin="222,49,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="2"/>
+        <TextBox HorizontalAlignment="Left" Margin="224,73,0,0" GotFocus="TrainServiceNumber_GotFocus" Text="Anna päivämäärä" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="ServiceDate" Grid.Column="2">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <Button Content="Lopeta" Margin="315,357,0,0" Grid.Column="2" Click="QuitApp" HorizontalAlignment="Left" Width="60" Height="50" VerticalAlignment="Top" Background="White"/>
+
+    </Grid>
+</Window>
